@@ -35,7 +35,13 @@
         <input id="ch4" type="number" step="0.01" placeholder="甲烷 %" />
         <button>上报</button>
       </form>
-      <table><thead><tr><th>测点</th><th>甲烷 %</th><th>状态</th><th>说明</th></tr></thead><tbody id="rows"></tbody></table>
+      <table><thead><tr><th>测点</th><th>甲烷 %</th><th>状态</th><th>说明</th><th id="actionHead" hidden>操作</th></tr></thead><tbody id="rows"></tbody></table>
+      <p><button id="quarToggle" type="button">隔离区</button></p>
+      <section id="quarantine" hidden>
+        <h2>隔离区</h2>
+        <p>隔离行默认不进总表；在恢复时限内可恢复，超时转为永久隔离。</p>
+        <table><thead><tr><th>测点</th><th>甲烷 %</th><th>状态</th><th>隔离原因</th><th>隔离人</th><th>恢复时限</th><th id="quarActionHead" hidden>操作</th></tr></thead><tbody id="qrows"></tbody></table>
+      </section>
     </section>
   </main>
   <script src="/app.js"></script>

@@ -23,6 +23,8 @@ services:
     environment:
       DATABASE_URL: postgresql+psycopg2://app:app@db:5432/methane
       JWT_SECRET: mine-methane-dev-secret
+      # 隔离行可恢复的时限（分钟），超时自动转为永久隔离
+      QUARANTINE_TTL_MINUTES: "30"
     depends_on:
       db:
         condition: service_healthy
